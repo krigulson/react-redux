@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { Grid, Row, Col, Table, PageHeader} from 'react-bootstrap';
 import { ActionCreators } from '../actions';
 import User from '../components/User';
+import { MoonLoader } from 'react-spinners';
 
 class Users extends Component {
 
@@ -18,7 +19,7 @@ class Users extends Component {
         <Row>
           <Col lg={12}>
             {
-              (fetching && <h1>Loading...</h1>) ||
+              (fetching && <MoonLoader />) ||
               (error && <h1>Error...</h1>) ||
               <div>
                 <PageHeader>Users</PageHeader>

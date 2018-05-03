@@ -4,6 +4,7 @@ import { Grid, Row, Col, PageHeader, Table } from 'react-bootstrap';
 import { ActionCreators } from '../actions';
 import User from '../components/User';
 import BackButton, { BackLink } from '../helpers/LinkHelper';
+import { MoonLoader } from 'react-spinners';
 
 
 class UserShow extends Component {
@@ -25,7 +26,7 @@ class UserShow extends Component {
           </PageHeader>
           <Col lg={4}>
             {
-              (fetching && <h1>Loading...</h1>) ||
+              (fetching && <MoonLoader />) ||
               (error && <h1>Error...</h1>) ||
               <div>
                 <Table striped bordered>

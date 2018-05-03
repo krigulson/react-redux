@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, PageHeader } from 'react-bootstrap';
 
 import { ActionCreators } from '../actions';
 import Post from '../components/Post';
+import { MoonLoader } from 'react-spinners';
 
 class Home extends Component {
 
@@ -18,11 +19,14 @@ class Home extends Component {
       <Grid>
         <Row>
           <Col lg={12}>
-            { (fetching && <h1>Loading...</h1>) ||
+            <PageHeader>All posts</PageHeader>
+            {
+              (fetching && <MoonLoader />) ||
               (error && <h1>Error...</h1>) ||
               _.map(posts, (post, id) => {
                 return <Post key={ post.id } {...post} />
-              }) }
+              })
+            }
           </Col>
         </Row>
       </Grid>

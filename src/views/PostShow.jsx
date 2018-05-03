@@ -6,6 +6,7 @@ import { ActionCreators } from '../actions';
 import Post from '../components/Post';
 import Comment from '../components/Comment';
 import BackButton from '../helpers/LinkHelper';
+import { MoonLoader } from 'react-spinners';
 
 class PostShow extends Component {
   componentDidMount() {
@@ -21,7 +22,7 @@ class PostShow extends Component {
         <Row>
           <Col lg={12}>
             {
-              (fetching && <h1>Loading...</h1>) ||
+              (fetching && <MoonLoader />) ||
               (error && <h1>Error...</h1>) ||
               <div>
                 <PageHeader>

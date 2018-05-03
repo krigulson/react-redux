@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { ActionCreators } from '../actions';
 import Comment from '../components/Comment';
+import { MoonLoader } from 'react-spinners';
 
 class PostComments extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class PostComments extends Component {
       <Grid>
         <Row>
           <Col lg={12}>
-            {(fetching && <h1>Loading...</h1>) ||
+            {(fetching && <MoonLoader />) ||
               (error && <h1>Error...</h1>) ||
               _.map(comments, (comment, id) => {
                 return <Comment key={comment.id} {...comment} />
