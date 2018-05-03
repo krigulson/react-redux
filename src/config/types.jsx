@@ -1,16 +1,29 @@
 //Posts
 
 export const GET_POSTS = 'GET_POSTS';
-export const POSTS_FETCHED = 'POSTS_FETCHED';
-export const FETCH_POSTS_FAILED = 'FETCH_POSTS_FAILED';
-
 export const GET_POST = 'GET_POST';
+
+export const POSTS_FETCHED = 'POSTS_FETCHED';
 export const POST_FETCHED = 'POST_FETCHED';
+
+export const FETCH_POSTS_FAILED = 'FETCH_POSTS_FAILED';
 export const FETCH_POST_FAILED = 'FETCH_POST_FAILED';
 
 //Comments
 
 export const GET_COMMENTS = 'GET_COMMENTS';
 export const COMMENTS_FETCHED = 'COMMENTS_FETCHED';
-export const COMMENT_FETCHED = 'COMMENTS_FETCHED';
+export const COMMENT_FETCHED = 'COMMENT_FETCHED';
 export const FETCH_COMMENTS_FAILED = 'FETCH_COMMENTS_FAILED';
+
+//Users
+
+export const GET_USERS = 'GET_USERS';
+export const GET_USER = 'GET_USER';
+
+export const USERS_FETCHED = 'USERS_FETCHED';
+export const USER_FETCHED = 'USER_FETCHED';
+
+export const FETCH_USERS_FAILED = 'FETCH_USERS_FAILED';
+export const FETCH_USER_FAILED = 'FETCH_USER_FAILED';
+

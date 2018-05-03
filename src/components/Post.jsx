@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Panel } from 'react-bootstrap';
-import { ShowLink } from '../helpers/LinkHelper';
+import { ShowLink, AuthorLink } from '../helpers/LinkHelper';
 
 class Post extends Component {
 
@@ -10,7 +10,10 @@ class Post extends Component {
     return (
       <Panel bsStyle="primary">
         <Panel.Heading>
-          <ShowLink link={'/posts/' + id} />
+          <div className="pull-right">
+            <ShowLink link={`/posts/${id}`} />
+            <AuthorLink link={`/users/${id}`} />
+          </div>
           { title }
         </Panel.Heading>
         <Panel.Body>

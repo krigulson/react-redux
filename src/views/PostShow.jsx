@@ -5,6 +5,7 @@ import { Grid, Row, Col, PageHeader } from 'react-bootstrap';
 import { ActionCreators } from '../actions';
 import Post from '../components/Post';
 import Comment from '../components/Comment';
+import BackButton from '../helpers/LinkHelper';
 
 class PostShow extends Component {
   componentDidMount() {
@@ -23,7 +24,12 @@ class PostShow extends Component {
               (fetching && <h1>Loading...</h1>) ||
               (error && <h1>Error...</h1>) ||
               <div>
-                <PageHeader>Post</PageHeader>
+                <PageHeader>
+                  Post
+                  <div className="pull-right">
+                    <BackButton />
+                  </div>
+                </PageHeader>
                 <Post key={post.id} {...post} />
                 <PageHeader>Comments</PageHeader>
                 {
