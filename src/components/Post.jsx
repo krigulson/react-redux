@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Panel } from 'react-bootstrap';
+import { ShowLink } from '../helpers/LinkHelper';
 
 class Post extends Component {
 
   render() {
-    const { title, body } = this.props;
+    const { title, body, id} = this.props;
     return (
-      <Panel>
+      <Panel bsStyle="primary">
         <Panel.Heading>
+          <ShowLink link={'/posts/' + id} />
           { title }
         </Panel.Heading>
         <Panel.Body>
