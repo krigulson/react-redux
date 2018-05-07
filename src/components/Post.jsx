@@ -13,6 +13,10 @@ class Post extends Component {
           <div className="pull-right">
             <ShowLink link={`/posts/${id}`} />
             <AuthorLink link={`/users/${id}`} />
+            <button className="btn btn-xs btn-danger"
+              onClick={() => this.props.dispatch({ type: 'DELETE_POST', id: id })}>
+              Delete
+            </button>
           </div>
           { title }
         </Panel.Heading>
@@ -33,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post);
+export default connect()(Post);

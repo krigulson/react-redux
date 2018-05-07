@@ -43,6 +43,12 @@ export default function postReducer(state = initialState, action) {
         fetching: false
       };
     }
+    case 'DELETE_POST':
+      return Object.assign({}, state, {
+        posts: state.posts.filter((post) =>
+          post.id !== action.id
+        )
+      })
     default:
       return state;
   }
