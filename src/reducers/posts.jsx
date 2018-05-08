@@ -43,6 +43,10 @@ export default function postReducer(state = initialState, action) {
         fetching: false
       };
     }
+    case 'ADD_POST':
+      return Object.assign({}, state, {
+        posts: state.posts.concat([action.post])
+      })
     case 'DELETE_POST':
       return Object.assign({}, state, {
         posts: state.posts.filter((post) =>

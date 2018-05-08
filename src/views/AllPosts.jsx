@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 import { Grid, Row, Col, PageHeader } from 'react-bootstrap';
 
 import { ActionCreators } from '../actions';
 import Post from '../components/Post';
-import { MoonLoader } from 'react-spinners';
+import Form from '../components/Form';
+import MyModal from '../components/Modal';
 
-class Home extends Component {
-
+class AllPosts extends Component {
   componentDidMount() {
     this.props.onGetPosts();
   }
 
   render() {
-    const { posts, error, fetching } = this.props;
+    const { posts } = this.props;
     return (
       <Grid>
         <Row>
           <Col lg={12}>
-            <PageHeader>All posts</PageHeader>
-            {
-              (fetching && <MoonLoader />) ||
-              (error && <h1>Error...</h1>) ||
-              _.map(posts, (post, id) => {
-                return <Post key={ post.id } {...post} />
-              })
-            }
+            <PageHeader>
+              All posts
+              <div className="pull-right">
+                <MyModal modalTitle={'Create new post'} >
+                  <Form />
+                </MyModal>
+              </div>
+            </PageHeader>
+              {posts.map((post) => <Post key={ post.id } {...post} />)}
           </Col>
         </Row>
       </Grid>
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(AllPosts);

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col, PageHeader, Table } from 'react-bootstrap';
 import { ActionCreators } from '../actions';
-import User from '../components/User';
-import BackButton, { BackLink } from '../helpers/LinkHelper';
+import BackButton from '../helpers/LinkHelper';
 import { MoonLoader } from 'react-spinners';
 
 

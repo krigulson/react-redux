@@ -63,3 +63,19 @@ function fetchPostFailed() {
   }
 }
 
+// export function addPost(data) {
+//   return fetch('https://jsonplaceholder.typicode.com/posts', {
+//     method: 'POST',
+//     mode: 'CORS',
+//     body: JSON.stringify({
+//       title: '',
+//       body: '',
+//       userId: 1
+//     }),
+//     headers: {
+//       'Content-Type': 'application/json; charset=UTF-8'
+//     }
+//   }).then(response => response.json())
+//     .then(json => console.log(json));
+// }
+
