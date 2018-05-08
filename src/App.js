@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import createRoutes from './routes/Routes';
 
 const routes = createRoutes();
